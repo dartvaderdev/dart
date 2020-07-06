@@ -6,7 +6,7 @@ Toda esse conteúdo foi feito com base na [documentação do Dart](https://api.d
 
 > *fonte: DevMedia - https://www.devmedia.com.br/sintaxe-dart-tipos-nao-tao-primitivos/40368*
 
-Apesar de tudo isso, o Dart também possui um tipo que se chama `dynamic`, esse tipo é como se fosse um tipo indefinido, ele é o que ele recebe e também pode ser alterado em tempo de execução do código. Abaixo deixei uma lista com os tipos primitivos que vamos estudar e vamos falar sobre cada tipo separadamente.
+Apesar de tudo isso, o Dart também possui um tipo que se chama `dynamic`, esse tipo é como se fosse um tipo indefinido, ele é o que ele recebe e também pode ser alterado em tempo de execução do código. A lista abaixo são os tipos que vou estudar.
 
 * **Number**
 * **String**
