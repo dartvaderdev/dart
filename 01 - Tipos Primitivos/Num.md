@@ -65,7 +65,7 @@ class Pessoa{
 		
 * **isFinit** -> bool
 
-Essa propriedade analisa se o objeto(variável) é um número finito sendo ele positivo ou negativo, caso seja finito ela retornara `true`, caso contrário retornara `false`.
+Essa propriedade analisa se o valor da variável é um número finito sendo ele positivo ou negativo, caso seja finito ela retornara `true`, caso contrário retornara `false`.
 
 ```dart
 void main() {
@@ -80,9 +80,9 @@ void main() {
 }
 ```
 
-* **isFinit** -> bool
+* **isInfinit** -> bool
 
-Essa propriedade analisa se o objeto(variável) é um número finito sendo ele positivo ou negativo, caso seja finito ela retornara `true`, caso contrário retornara `false`.
+Essa propriedade analisa se o valor da variável é um número infinito sendo ele positivo ou negativo, caso seja infinito ela retornara `true`, caso contrário retornara `false`.
 
 ```dart
 void main() {
@@ -111,7 +111,7 @@ void main() {
 
 * **isNegative** -> bool
 
-Essa propriedade analisa se o objeto(variável) é um número negativo ou não, caso seja ela retorna `true`, caso não seja ela retorna `false`.
+Essa propriedade analisa se o valor da variável é um número negativo ou não, caso seja ela retorna `true`, caso não seja ela retorna `false`.
 
 ```dart
 void main() {
@@ -125,7 +125,7 @@ void main() {
 
 * **sign** -> num
 
-Essa propriedade analisa se o objeto(variável) é menor, igual ou maior que zero, retornando `-1` caso o número seja negativo, `0` caso o número seja 0 e `1` caso o número seja positivo.
+Essa propriedade analisa se o valor da variável é menor, igual ou maior que zero, retornando `-1` caso o número seja negativo, `0` caso o número seja 0 e `1` caso o número seja positivo.
 
 ```dart
 void main() {
@@ -136,5 +136,63 @@ void main() {
   print(negativo.sign); // -1
   print(zero.sign); // 0
   print(positivo.sign); // 1
+}
+```
+
+* **rutimeType** -> type
+
+Essa propriedade analisa o valor da variável e retorna o seu tipo de dado da variável **em tempo de execução**, o Dart vai retornar o tipo da variável naquele momento.
+
+```dark
+void main() {
+  var myVar = new Pessoa();
+  num n = 35.6;
+  bool ligado = true;
+  dynamic myVar = -3.58;
+
+  print(myVar.runtimeType); // Pessoa
+  print(n.runtimeType); // double
+  print(ligado.runtimeType); // bool
+  
+  print(myVar.runtimeType); // double
+  myVar = "Agora eu sou uma 'String'";
+  print(myVar.runtimeType); // String
+  
+  
+}
+
+class Pessoa{
+  String nome;
+}
+```
+
+## Métodos de Num
+> [metodo] -> [tipo retornado]
+
+* **abs()** -> num
+
+Esse método analisa o valor da variável e retorna o seu valor absoluto.
+
+```dart
+void main() {
+  num myVar = -3.58;
+
+  print(myVar.abs()); // 3.58
+}
+```
+
+* **ceil()** -> int
+
+Esse método eu tenho que dar o devido crédito à `@gaby93bs` que me ajudou a entender esse método que parece um pouco confuso na primeira impressão, mas que faz todo sentido. Ele retorna o menor número inteiro que seja igual ou maior que o número original, em outras palavras, o método vai retornar o próximo valor inteiro maior ou igual ao número original.
+
+```dart
+void main() {
+  num myVar = 2.00000001;
+  num myVar2 = -2.66;
+  num myVar3 = 5;
+    
+  print(myVar.ceil()); // 3
+  print(myVar2.ceil()); // -2
+  print(myVar3.ceil()); // 5
 }
 ```
