@@ -39,9 +39,11 @@ void main() {
 
 A classe Num possui algumas propriedades e métodos que que nos auxiliam no desenvolvimento, essas propriedades se estendem aos nossos tipos também(num, int e double) abaixo segue a lista dessas propriedades e métodos.
 
-> [propriedade/metodo] -> [tipo retornado]
 
 ## Propriedades de Num
+> [propriedade] -> [tipo retornado]
+
+
 	* **__hasCode__** -> int
 			Retorna um código de hash que é uma identificação da classe, é útil quando se precisa fazer validações e você deseja fazer sua própria validação, essa é uma funcionalidade difícil de entender, não consegui ter clareza nela, mas consegui absorver um pouco do conceito de `hasCode` através desse [post do Ayush P Gupta na medium.com](https://medium.com/@ayushpguptaapg/demystifying-and-hashcode-in-dart-2f328d1ab1bc) foi a explicação mais clara que eu consegui, mas a aplicação da propriedade é como descrito abaixo.
 			
