@@ -64,3 +64,77 @@ class Pessoa{
 ```
 		
 * **isFinit** -> bool
+
+Essa propriedade analisa se o objeto(variável) é um número finito sendo ele positivo ou negativo, caso seja finito ela retornara `true`, caso contrário retornara `false`.
+
+```dart
+void main() {
+  double infinito = 1 / 0;
+  double finito = 7;
+  
+  print(infinito); // Infinity
+  print(infinito.isFinite); // false
+  
+  print(finito); // 7
+  print(finito.isFinite); // true
+}
+```
+
+* **isFinit** -> bool
+
+Essa propriedade analisa se o objeto(variável) é um número finito sendo ele positivo ou negativo, caso seja finito ela retornara `true`, caso contrário retornara `false`.
+
+```dart
+void main() {
+  double infinito = 1 / 0;
+  double finito = 30;
+  
+  print(infinito); // Infinity
+  print(infinito.isInfinite); // true
+  
+  print(finito); // 30
+  print(finito.isInfinite); // false
+}
+```
+
+* **isNaN** -> bool
+
+Caramba, eu até tentei, só que não consegui validar essa função, se você conseguiu me ensina por favor. O mais próximo que cheguei foi o código abaixo que me retorna o erro **Uncaught TypeError: C.JSString_methods.get$isNaN is not a functionError: TypeError: C.JSString_methods.get$isNaN is not a function**.
+
+```dart
+void main() {
+  dynamic myVar = 'NaN';
+
+  print(myVar.isNaN); // Uncaught TypeError: C.JSString_methods.get$isNaN is not a functionError: TypeError: C.JSString_methods.get$isNaN is not a function
+}
+```
+
+* **isNegative** -> bool
+
+Essa propriedade analisa se o objeto(variável) é um número negativo ou não, caso seja ela retorna `true`, caso não seja ela retorna `false`.
+
+```dart
+void main() {
+  int negativo = -10;
+  int positivo = 10;
+
+  print(negativo.isNegative); // true
+  print(positivo.isNegative); // false
+}
+```
+
+* **sign** -> num
+
+Essa propriedade analisa se o objeto(variável) é menor, igual ou maior que zero, retornando `-1` caso o número seja negativo, `0` caso o número seja 0 e `1` caso o número seja positivo.
+
+```dart
+void main() {
+  int negativo = -10;
+  int zero = 0;
+  int positivo = 10;
+
+  print(negativo.sign); // -1
+  print(zero.sign); // 0
+  print(positivo.sign); // 1
+}
+```
