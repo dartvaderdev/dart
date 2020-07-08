@@ -65,7 +65,7 @@ class Pessoa{
 		
 * **isFinit** -> bool
 
-Essa propriedade analisa se o valor da variável é um número finito sendo ele positivo ou negativo, caso seja finito ela retornara `true`, caso contrário retornara `false`.
+Essa propriedade analisa se o valor da variável é um número finito sendo ele positivo ou negativo, caso seja finito ela retornara `true`, caso contrário retornara `false`. Tenho que dar os créditos do estudo dessa propriedade ao [@danielreisduarte](https://www.instagram.com/danielreisduarte/?hl=pt-br "Instagram dele")(um programador Delphi fora da curva) que me ajudou a encontrar uma situação onde o Dart reconhece um 'número' infinito, e como o Daniel frisou bem kkkkkk, infinito não é um número, é uma ideia.
 
 ```dart
 void main() {
@@ -183,7 +183,7 @@ void main() {
 
 * **ceil()** -> int
 
-Esse método eu tenho que dar o devido crédito à `@gaby93bs` que me ajudou a entender esse método que parece um pouco confuso na primeira impressão, mas que faz todo sentido. Ele retorna o menor número inteiro que seja igual ou maior que o número original, em outras palavras, o método vai retornar o próximo valor inteiro maior ou igual ao número original.
+Esse método eu tenho que dar o devido crédito à [@gaby93bs](https://www.instagram.com/gaby93bs/?hl=pt-br "Instagram dela")(uma contadora top, que entende o que é um plano de contas e centro de custo) que me ajudou a entender esse método que parece um pouco confuso na primeira impressão, mas que faz todo sentido. Ele retorna o menor número inteiro que seja igual ou maior que o número original, em outras palavras, o método vai retornar o próximo valor inteiro maior ou igual ao número original.
 
 ```dart
 void main() {
@@ -194,5 +194,87 @@ void main() {
   print(myVar.ceil()); // 3
   print(myVar2.ceil()); // -2
   print(myVar3.ceil()); // 5
+}
+```
+
+* **ceilToDouble()** -> double
+
+Não consegui diferenciar esse método do `ceil()`, pela documentação eu acreditei que ele teria a mesma função do `ceil()` só que retornando um `double`, porém quando fiz uma validação do tipo, ele retornou como `int`, então fica em aberto essa funcionalidade.
+
+```dart
+void main() {
+  num myVar = 2.00000001;
+  num myVar2 = -2.66;
+  num myVar3 = 5;
+  num x = myVar3.ceilToDouble();
+    
+  print(myVar.ceilToDouble()); // 3
+  print(myVar2.ceilToDouble()); // -2
+  print(myVar3.ceilToDouble()); // 5
+  
+  print(x.runtimeType); // int
+}
+```
+
+* **clamp()** -> num
+
+Esse método analisa o valor da variável e se o valor da variável estiver dentro do intervalo informado no parâmetro, o método retornara o valor da variável, caso não esteja no intervalo informado, o método retornara o limite mínimo ou máximo que o valor não alcançou ou extrapolou.
+
+```dart
+void main() {
+  num myVar = 77;
+  
+  print(myVar.clamp(1, 100)); // 77
+  print(myVar.clamp(100, 200)); // 100
+  print(myVar.clamp(1, 50)); // 50
+}
+```
+
+* **compareTo()** -> int
+
+Esse método analisa o valor da variável e compara com um outro valor passaado por parâmetro na função `compareTo()`, caso o valor que está sendo comparado seja igual ao valor do parâmetro, a função retornará o valor `0`, se for menor ela retornará `-1` e se for maior retornará `1`.
+
+```dart
+void main() {
+  num myVar = 3;
+  
+  print(myVar.compareTo(1)); // 1
+  print(myVar.compareTo(10)); // -1
+  print(myVar.compareTo(3)); // 0
+}
+```
+
+* **floor()** -> int
+
+Esse método é semelhante ao `ceil()` só que o inverso dele. Ele retorna o maior número inteiro que seja igual ou menor que o número original, em outras palavras, o método vai retornar o valor inteiro anterior menor ou igual ao número original.
+
+```dart
+void main() {
+  num myVar = 2.00000001;
+  num myVar2 = -2.66;
+  num myVar3 = 5;
+    
+  print(myVar.floor()); // 2
+  print(myVar2.floor()); // -3
+  print(myVar3.floor()); // 5
+}
+```
+
+* **floorToDouble()** -> double
+
+Esse método segue a mesma condição do `ceilToDouble()`, o `floorToDouble()` seria o mesmo que o `floor()` porém retornando um `double`, só que assim como o `ceilToDouble` ele não está retornando um `double` e sim um `int`.
+
+```dart
+void main() {
+  num myVar = 2.00000001;
+  num myVar2 = -2.66;
+  num myVar3 = 5;
+  num x = myVar3.floorToDouble();
+    
+  print(myVar.floorToDouble()); // 2
+  print(myVar2.floorToDouble()); // -3
+  print(myVar3.floorToDouble()); // 5
+  
+  print(x.runtimeType); // int
 }
 ```
