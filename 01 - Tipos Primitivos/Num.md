@@ -143,7 +143,7 @@ void main() {
 
 Essa propriedade analisa o valor da variável e retorna o seu tipo de dado da variável **em tempo de execução**, o Dart vai retornar o tipo da variável naquele momento.
 
-```dark
+```dart
 void main() {
   var myVar = new Pessoa();
   num n = 35.6;
@@ -157,8 +157,6 @@ void main() {
   print(myVar.runtimeType); // double
   myVar = "Agora eu sou uma 'String'";
   print(myVar.runtimeType); // String
-  
-  
 }
 
 class Pessoa{
@@ -278,3 +276,167 @@ void main() {
   print(x.runtimeType); // int
 }
 ```
+
+* **remainder()** -> num
+
+Esse método analisa o valor da variável e retorna o resto da divisão enquanto o quociente for inteiro.
+
+```dart
+void main() {
+  num myVar = 7;
+  num myVar2 = 10;
+  num myVar3 = 120;
+  
+  print(myVar.remainder(4)); // 3
+  print(myVar2.remainder(2)); // 0
+  print(myVar3.remainder(10)); // 0
+}
+```
+
+* **round()** -> int
+
+Esse método analisa o valor da variável e retorna o número inteiro mais próximo do valor da variável, ele usa apena a primeira casa decimal para definir se o arredondamento será para mais ou para menos.
+
+```dart
+void main() {
+  num myVar = 7.2;
+  num myVar2 = 1.4999;
+  num myVar3 = 1.5000;
+  
+  print(myVar.round()); // 7
+  print(myVar2.round()); // 1
+  print(myVar3.round()); // 2
+}
+```
+
+* **roundToDouble()** -> double
+
+Esse é mais um método que ficou com sua funcionalidade incoerênte, porque o valor retornado não é um double e o arredondamento feito está semelhante ao método `round()`.
+
+```dart
+num myVar = 7.2;
+  num myVar2 = 1.4999;
+  num myVar3 = 1.5000;
+  double x = myVar3.roundToDouble();
+  
+  print(myVar.roundToDouble()); // 7
+  print(myVar2.roundToDouble()); // 1
+  print(myVar3.roundToDouble()); // 2
+  
+  print(x.runtimeType); // int
+```
+
+* **toDouble()** -> double
+
+Esse método é responsável por fazer a converção do valor original para o tipo `double`. Porém quanto analiso o tipo retornado, parece que a converção não foi feita, o método sempre me retorna o tipo original.
+
+```dart
+void main() {
+  num myVar = 7;
+  var x = myVar.toDouble();
+  
+  print(x.runtimeType); // int
+}
+```
+
+* **toInt()** -> int
+
+Esse método é responsável por fazer a converção do valor original para o tipo `int`.
+
+```dart
+void main() {
+  double myVar = 7.5;
+  num x = myVar.toInt();
+  
+  print(x.runtimeType); // int
+}
+```
+
+* **toString()** -> String
+
+Esse método é responsável por fazer a converção do valor original para o tipo `String`.
+
+```dart
+void main() {
+  double myVar = 10.3;
+  var x = myVar.toString();
+  
+  print(x.runtimeType); // String
+}
+```
+
+* **toStringAsExponential()** -> String
+
+Esse método analisa o valor da variável e retorna sua representação exponencial.
+
+```dart
+void main() {
+  double myVar = 7.123;
+  var x = myVar.toStringAsExponential(0);
+  var y = myVar.toStringAsExponential(3);
+  
+  print(x); // 7e+0
+  print(y); // 7.123e+0
+}
+```
+
+* **toStringAsFixed()** -> String
+
+Esse método analisa o valor da variável e retorna uma `String` fazendo um __truncate__ do valor. O valor informado no parâmetro da função vai ser a quantidade de casas decimais que o retorno do método vai levar em consideração.
+
+```dart
+void main() {
+  double myVar = 7.1236564;
+  var x = myVar.toStringAsFixed(0);
+  var y = myVar.toStringAsFixed(3);
+  
+  print(x); // 7
+  print(y); // 7.124
+}
+```
+
+* **toStringAsPrecision()** -> String
+
+Esse método pelo que percebi, realiza praticamente a mesma tarefa do `toStringAsFixed()`, porém o `toStringAsPrecision()` não aceita `0` como um parâmetro, outra diferença é que o `toStringAsFixed()` retonar a quantidade de casas decimais passada por parâmetro, já o `toStringAsPrecision()` retorna a quantidade de 'números' de acordo com valor passado por parâmetro, com certeza existem mais diferênças, porém não me eprofundarei nesses métodos.
+
+```dart
+void main() {
+  double myVar = 7.1236564;
+  var x = myVar.toStringAsPrecision(1);
+  var y = myVar.toStringAsPrecision(3);
+  
+  print(x); // 7
+  print(y); // 7.12
+}
+```
+
+* **truncate** -> int
+
+Esse método analisa o valor da variável e retorna seu número inteiro desprezando todos os números depois da vírgula.
+
+```dart
+void main() {
+  num myVar = 171.1236564;
+  num myVar2 = 171.50000;
+  var x = myVar.truncate();
+  
+  print(x); // 171
+  print(myVar2.truncate()); // 171
+}
+```
+
+* **truncateToDouble()** -> double
+
+Esse método vai entrar para a lista dos métodos com a funcionalidade incoerênte, porque pelo que entendi, o método ignoraria as casas decimais, porém retornaria um `double`, ele realmente ignorou as casas decimais, porém não retornou um `double`.
+
+```dart
+void main() {
+  num myVar = 171.1236564;
+  num myVar2 = 171.50000;
+  var x = myVar.truncateToDouble();
+  
+  print(x); // 171
+  print(myVar2.truncateToDouble()); // 171
+}
+```
+
