@@ -410,7 +410,7 @@ void main() {
 }
 ```
 
-* **truncate** -> int
+* **truncate()** -> int
 
 Esse método analisa o valor da variável e retorna seu número inteiro desprezando todos os números depois da vírgula.
 
