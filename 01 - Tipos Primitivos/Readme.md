@@ -9,7 +9,7 @@ Toda esse conteúdo foi feito com base na [documentação do Dart](https://api.d
 Apesar de tudo isso, o Dart também possui um tipo que se chama `dynamic`, esse tipo é como se fosse um tipo indefinido, ele é o que ele recebe e também pode ser alterado em tempo de execução do código. A lista abaixo são os tipos que vou estudar.
 
 * [Number](https://github.com/dartvaderdev/dart/blob/master/01%20-%20Tipos%20Primitivos/Num.md)
-* **String**
+* [String](https://github.com/dartvaderdev/dart/blob/master/01%20-%20Tipos%20Primitivos/String.md)
 * **Boolean**
 * **Dynamic**
 * **Function**
